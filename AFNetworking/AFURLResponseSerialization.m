@@ -194,6 +194,10 @@ extern NSString * const AFNetworkingOperationFailingURLResponseErrorKey;
             }
         }
     }
+    else if ( data ) {
+        // got data, but it doesn't decode into a string. pass it on.
+        return data;
+    }
 
     return nil;
 }
