@@ -240,6 +240,10 @@ static BOOL AFErrorOrUnderlyingErrorHasCode(NSError *error, NSInteger code) {
             }
         }
     }
+    else if ( data ) {
+        // got data, but it doesn't decode into a string. pass it on.
+        return data;
+    }
 
     return responseObject;
 }
